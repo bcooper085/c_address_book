@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Nancy;
-using CD_Organizer.Objects;
+using Contact.Objects;
 
 namespace Address
 {
@@ -9,7 +9,11 @@ namespace Address
   {
     public HomeModule()
     {
-      
+      Get["/"] = _ => View["index.cshtml"];
+      Post["/add_contact"] = _ => {
+        Contact newContact = new Contact(Request.Form["contact-name"], Request.Form["contact-phone"]);
+        return View["contact_added.cshtml", newContact];
+      };
     }
   }
 }

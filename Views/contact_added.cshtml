@@ -13,8 +13,10 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1>Welcome to your Contact Book.</h1>
-        <a href="/add_contact.cshtml">Add Contact</a>
+        <h3>Your contact has been added</h3>
+        <p class="contact_name">@Model.GetName</p>
+        <p class="contact_phone">@Model.GetPhone</p>
+        <h5>Add address for this contact</h5>
       </div>
     </div>
   </body>

@@ -4,19 +4,19 @@ namespace Contact.Objects
 {
   public class Contact
   {
-    private static List<Contact> _ instances = new List<Contact> {};
+    private static List<Contact> _instances = new List<Contact> {};
     private string _name;
     private string _phone;
     private int _id;
-    private List<Contact> _contact;
+    private List<Address> _address;
 
-    public Contact(string contactName)
+    public Contact(string contactName, string contactPhone)
     {
       _name = contactName;
-      _phone = contactPhone
+      _phone = contactPhone;
       _instances.Add(this);
       _id = _instances.Count;
-      _contact = new List<Contact> {};
+      _address = new List<Address> {};
     }
 
     public string GetName()
@@ -36,7 +36,7 @@ namespace Contact.Objects
 
     public List<Address> GetAddress()
     {
-      return _contact;
+      return _address;
     }
 
     public void AddAddress(Address newAddress)
@@ -51,7 +51,7 @@ namespace Contact.Objects
 
     public static void Clear()
     {
-      instances.Clear();
+      _instances.Clear();
     }
   }
 }
