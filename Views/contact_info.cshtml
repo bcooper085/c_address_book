@@ -13,7 +13,28 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        
+        <div class="contact_complete">
+          <h3>@Model["contact"].GetName()</h3>
+          <h4>@Model["contact"].GetPhone()</h4>
+          <ul>
+            @foreach (var add in @Model["address"])
+            {
+              <li>@add.GetAddress()</li>
+            }
+          </ul>
+          <h3>Add another address for this contact.</h3>
+          <form action="/@Model["contact"].GetId()/contact_info" method="post">
+            <label for="address-street">Street:</label>
+            <input id="address-street" type="text" name="address-street">
+            <label for="address-city">City:</label>
+            <input id="address-city" type="text" name="address-city">
+            <label for="address-zip">Zip:</label>
+            <input id="address-zip" type="text" name="address-zip">
+            <label for="address-state">State:</label>
+            <input id="address-state" type="text" name="address-state">
+            <button type="submit" name="button">Add Address</button>
+          </form>
+        </div>
       </div>
     </div>
   </body>

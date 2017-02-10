@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Nancy;
 using Contact_Book.Objects;
 
-namespace Address
+namespace Address_Book
 {
   public class HomeModule: NancyModule
   {
@@ -18,7 +18,7 @@ namespace Address
       Get["{id}/contact_info"] = parameter => {
         Dictionary<string, object> model = new Dictionary<string, object>();
         Contact selectedContact = Contact.Find(parameter.id);
-        List<Address> contactAddress = selectedContact.GetStreet().GetCity().GetZip().GetState();
+        List<Address> contactAddress = selectedContact.GetAddress();
         model.Add("contact", selectedContact);
         model.Add("address", contactAddress);
         return View["contact_info", model];
@@ -26,7 +26,7 @@ namespace Address
       Post["{id}/contact_info"] = parameter => {
         Dictionary<string, object> model = new Dictionary<string, object>();
         Contact selectedContact = Contact.Find(parameter.id);
-        List<Address> contactAddress = selectedContact.GetStreet().GetCity().GetZip().GetState();
+        List<Address> contactAddress = selectedContact.GetAddress();
         string streetAddress = Request.Form["address-street"];
         string cityAddress = Request.Form["address-city"];
         string zipAddress = Request.Form["address-zip"];

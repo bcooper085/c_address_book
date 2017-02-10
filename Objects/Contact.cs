@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Contact_Book.Objects
@@ -52,6 +53,11 @@ namespace Contact_Book.Objects
     public static void Clear()
     {
       _instances.Clear();
+    }
+
+    public static Contact Find(int searchId)
+    {
+      return _instances[searchId - 1];
     }
   }
 }

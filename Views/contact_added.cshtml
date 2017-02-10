@@ -14,8 +14,8 @@
     <div class="container">
       <div class="jumbotron">
         <h3>Your contact has been added</h3>
-        <p class="contact_name">@Model.GetName</p>
-        <p class="contact_phone">@Model.GetPhone</p>
+        <p class="contact_name">@Model.GetName()</p>
+        <p class="contact_phone">@Model.GetPhone()</p>
         <h5>Add address for this contact</h5>
         <form action="/@Model.GetId()/contact_info" method="post">
           <label for="address-street">Street:</label>
