@@ -17,6 +17,17 @@
         <p class="contact_name">@Model.GetName</p>
         <p class="contact_phone">@Model.GetPhone</p>
         <h5>Add address for this contact</h5>
+        <form action="/@Model.GetId()/contact_info" method="post">
+          <label for="address-street">Street:</label>
+          <input id="address-street" type="text" name="address-street">
+          <label for="address-city">City:</label>
+          <input id="address-city" type="text" name="address-city">
+          <label for="address-zip">Zip:</label>
+          <input id="address-zip" type="text" name="address-zip">
+          <label for="address-state">State:</label>
+          <input id="address-state" type="text" name="address-state">
+          <button type="submit" name="button">Add Address.</button>
+        </form>
       </div>
     </div>
   </body>
