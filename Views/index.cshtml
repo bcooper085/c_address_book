@@ -2,6 +2,7 @@
 <html>
 <head>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="Content/css/styles.css" rel="stylesheet" type="text/css">
   <meta charset="utf-8">
   <title>Address Book</title>
 </head>
@@ -9,19 +10,19 @@
   <div class="container">
     <div class="jumbotron">
       <h1>Welcome to your Contact Book.</h1>
-      <ol>
+      <ul>
         @foreach(var contact in Model)
         {
           <li><a href="/@contact.GetId()/contact_info">@contact.GetName()</a></li>
         }
-      </ol>
+      </ul>
       <div class="one btn btn-default">
         <a href="/add_contact/new">Add Contact</a>
       </div>
-      <form  action="/contacts_cleared" method="post">
-        <button class="btn btn-defaut" type="submit" name="button">Clear All Contacts</button>
-      </form>
     </div>
+    <form  action="/contacts_cleared" method="post">
+      <button class="btn btn-defaut" type="submit" name="button">Clear All Contacts</button>
+    </form>
   </div>
 </body>
 </html>
