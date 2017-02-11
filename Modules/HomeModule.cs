@@ -9,13 +9,14 @@ namespace Address_Book
   {
     public HomeModule()
     {
-      Get["/"] = _ => View["index.cshtml"];
-      Get["/add_contact"] = _ => View["add_contact.cshtml"];
-      Get["/add_contact"] = _ => {
+      Get["/"] = _ => {
         List<Contact> allContacts = Contact.GetAll();
-        return View["add_contact.cshtml", allContacts];
+        return View["index.cshtml", allContacts];
       };
       Get["/add_contact/new"] = _ => {
+        return View["add_contact.cshtml"];
+      };
+      Get["/add_contact"] = _ => {
         return View["contact_added.cshtml"];
       };
       Post["/add_contact"] = _ => {
@@ -44,11 +45,11 @@ namespace Address_Book
         model.Add("address", contactAddress);
         return View["contact_info", model];
       };
-      Post["/contact_list"] = _ => {
-        List<int> contactId = Contact.selectedContact(Request.Form["contact-name"]);
-        List<Contact> findContact = new List<Contact> {};
-        return View["index.html", findContact];
-      };
+      // Post["/contact_list"] = _ => {
+      //   List<int> contactId = Contact.selectedContact(Request.Form["contact-name"]);
+      //   List<Contact> findContact = new List<Contact> {};
+      //   return View["index.html", findContact];
+      // };
       Post["/contacts_cleared"] = _ => {
         Contact.Clear();
         return View["page_cleared.cshtml"];

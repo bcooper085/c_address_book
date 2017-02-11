@@ -9,8 +9,8 @@
     <div class="container">
       <div class="jumbotron">
         <div class="contact_complete">
-          <h3>@Model["contact"].GetName()</h3>
-          <h4>@Model["contact"].GetPhone()</h4>
+          <h3>Name: @Model["contact"].GetName()</h3>
+          <h4>Phone: @Model["contact"].GetPhone()</h4>
           <ul>
             @foreach (var add in @Model["address"])
             {

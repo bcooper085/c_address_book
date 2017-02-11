@@ -10,10 +10,13 @@
     <div class="jumbotron">
       <h1>Welcome to your Contact Book.</h1>
       <ol>
-
+        @foreach(var contact in Model)
+        {
+          <li><a href="contact/@contact.GetId()">@contact.GetName()</a></li>
+        }
       </ol>
       <div class="one btn btn-default">
-        <a href="/add_contact">Add Contact</a>
+        <a href="/add_contact/new">Add Contact</a>
       </div>
       <form  action="/contacts_cleared" method="post">
         <button class="btn btn-defaut" type="submit" name="button">Clear All Contacts</button>
