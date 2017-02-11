@@ -37,6 +37,15 @@ namespace Address_Book
         model.Add("address", contactAddress);
         return View["contact_info", model];
       };
+      Post["/contact_list"] = _ => {
+        List<int> contactId = Contact.selectedContact(Request.Form["contact-name"]);
+        List<Contact> findContact = new List<Contact> {};
+        return View["index.html", findContact];
+      };
+      Post["/contacts_cleared"] = _ => {
+        Contact.Clear();
+        return View["page_cleared.cshtml"];
+      };
     }
   }
 }

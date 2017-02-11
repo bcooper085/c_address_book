@@ -2,11 +2,6 @@
 <html>
   <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
     <meta charset="utf-8">
     <title>Address Book</title>
   </head>
@@ -14,8 +9,8 @@
     <div class="container">
       <div class="jumbotron">
         <h3>Your contact has been added</h3>
-        <p class="contact_name">@Model.GetName()</p>
-        <p class="contact_phone">@Model.GetPhone()</p>
+        <p>Name: @Model.GetName()</p>
+        <p>Phone: @Model.GetPhone()</p>
         <h5>Add address for this contact</h5>
         <form action="/@Model.GetId()/contact_info" method="post">
           <label for="address-street">Street:</label>

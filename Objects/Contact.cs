@@ -59,5 +59,18 @@ namespace Contact_Book.Objects
     {
       return _instances[searchId - 1];
     }
+
+    public static List<int> selectedContact(string name)
+    {
+      List<int> display = new List<int> {};
+      foreach (Contact person in _instances)
+      {
+        if (person.GetName().Contains(name))
+        {
+          display.Add(person.GetId());
+        }
+      }
+      return display;
+    }
   }
 }
