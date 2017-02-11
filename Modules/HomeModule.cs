@@ -16,10 +16,10 @@ namespace Address_Book
       Get["/add_contact/new"] = _ => {
         return View["add_contact.cshtml"];
       };
-      Get["/add_contact"] = _ => {
-        return View["contact_added.cshtml"];
-      };
-      Post["/add_contact"] = _ => {
+      // Get["/add_contact"] = _ => {
+      //   return View["contact_added.cshtml"];
+      // };
+      Post["/add_contact/new"] = _ => {
         Contact newContact = new Contact(Request.Form["contact-name"], Request.Form["contact-phone"]);
         return View["contact_added.cshtml", newContact];
       };

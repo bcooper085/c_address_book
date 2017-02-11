@@ -12,7 +12,7 @@
       <ol>
         @foreach(var contact in Model)
         {
-          <li><a href="contact/@contact.GetId()">@contact.GetName()</a></li>
+          <li><a href="/@contact.GetId()/contact_info">@contact.GetName()</a></li>
         }
       </ol>
       <div class="one btn btn-default">
