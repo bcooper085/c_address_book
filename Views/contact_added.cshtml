@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <meta charset="utf-8">
-    <title>Address Book</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="jumbotron">
-        <h3>Your contact has been added</h3>
-        <p>Name: @Model.GetName()</p>
-        <p>Phone: @Model.GetPhone()</p>
-        <h5>Add address for this contact</h5>
-        <form action="/@Model.GetId()/contact_info" method="post">
-          <label for="address-street">Street:</label>
-          <input id="address-street" type="text" name="address-street">
-          <label for="address-city">City:</label>
-          <input id="address-city" type="text" name="address-city">
-          <label for="address-zip">Zip:</label>
-          <input id="address-zip" type="text" name="address-zip">
-          <label for="address-state">State:</label>
-          <input id="address-state" type="text" name="address-state">
-          <button type="submit" name="button">Add Address</button>
-        </form>
-      </div>
-      <div class="btn btn-default">
-        <h4>Dont add address</h4>
-        <a href="/">Home</a>
-      </div>
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <meta charset="utf-8">
+  <title>Address Book</title>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h3>Your contact has been added</h3>
+      <p>Name: @Model.GetName()</p>
+      <p>Phone: @Model.GetPhone()</p>
+      <h5>Add address for this contact</h5>
+      <form action="/@Model.GetId()/contact_info" method="post">
+        <label for="address-street">Street:</label>
+        <input id="address-street" type="text" name="address-street">
+        <label for="address-city">City:</label>
+        <input id="address-city" type="text" name="address-city">
+        <label for="address-zip">Zip:</label>
+        <input id="address-zip" type="text" name="address-zip">
+        <label for="address-state">State:</label>
+        <input id="address-state" type="text" name="address-state">
+        <button type="submit" name="button">Add Address</button>
+      </form>
     </div>
-  </body>
+    <div class="btn btn-default">
+      <h4>Dont add address</h4>
+      <a href="/">Home</a>
+    </div>
+  </div>
+</body>
 </html>

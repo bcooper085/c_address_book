@@ -16,9 +16,6 @@ namespace Address_Book
       Get["/add_contact/new"] = _ => {
         return View["add_contact.cshtml"];
       };
-      // Get["/add_contact"] = _ => {
-      //   return View["contact_added.cshtml"];
-      // };
       Post["/add_contact/new"] = _ => {
         Contact newContact = new Contact(Request.Form["contact-name"], Request.Form["contact-phone"]);
         return View["contact_added.cshtml", newContact];
@@ -45,11 +42,6 @@ namespace Address_Book
         model.Add("address", contactAddress);
         return View["contact_info", model];
       };
-      // Post["/contact_list"] = _ => {
-      //   List<int> contactId = Contact.selectedContact(Request.Form["contact-name"]);
-      //   List<Contact> findContact = new List<Contact> {};
-      //   return View["index.html", findContact];
-      // };
       Post["/contacts_cleared"] = _ => {
         Contact.Clear();
         return View["page_cleared.cshtml"];
