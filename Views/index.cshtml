@@ -9,20 +9,14 @@
   <div class="container">
     <div class="jumbotron">
       <h1>Welcome to your Contact Book.</h1>
-      <ul>
-      @foreach (var contact in Model)
-      {
-        <li><a href='/contact/@contact.GetId()'>@contact.GetDescription()</a></li>
-      }
-    </ul>
+      <ol>
+
+      </ol>
       <div class="one btn btn-default">
         <a href="/add_contact">Add Contact</a>
       </div>
-      <div class="one btn btn-default">
-        <a href="/contact_list">Contact List</a>
-      </div>
-      <form action="/contacts_cleared" method="post">
-        <button type="submit" name="button">Clear All Contacts</button>
+      <form  action="/contacts_cleared" method="post">
+        <button class="btn btn-defaut" type="submit" name="button">Clear All Contacts</button>
       </form>
     </div>
   </body>

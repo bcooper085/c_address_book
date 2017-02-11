@@ -11,9 +11,9 @@ namespace Address_Book
     {
       Get["/"] = _ => View["index.cshtml"];
       Get["/add_contact"] = _ => View["add_contact.cshtml"];
-      Get["/add_contact"] + _ => {
+      Get["/add_contact"] = _ => {
         List<Contact> allContacts = Contact.GetAll();
-        return View["index.html", allContacts]''
+        return View["add_contact.cshtml", allContacts];
       };
       Get["/add_contact/new"] = _ => {
         return View["contact_added.cshtml"];
