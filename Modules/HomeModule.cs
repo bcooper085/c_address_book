@@ -32,11 +32,7 @@ namespace Address_Book
         Dictionary<string, object> model = new Dictionary<string, object>();
         Contact selectedContact = Contact.Find(parameter.id);
         List<Address> contactAddress = selectedContact.GetAddress();
-        string streetAddress = Request.Form["address-street"];
-        string cityAddress = Request.Form["address-city"];
-        string zipAddress = Request.Form["address-zip"];
-        string stateAddress = Request.Form["address-state"];
-        Address newAddress = new Address(streetAddress, cityAddress, zipAddress, stateAddress);
+        Address newAddress = new Address(Request.Form["address-street"], Request.Form["address-city"], Request.Form["address-zip"], Request.Form["address-state"]);
         contactAddress.Add(newAddress);
         model.Add("contact", selectedContact);
         model.Add("address", contactAddress);
